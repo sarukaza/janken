@@ -1,16 +1,14 @@
 def pon():
-    while True:
-        choice = input("じゃんけんの手を入力してください（1: グー, 2: チョキ, 3: パー）: ")
-        if choice in ['1', '2', '3']:
-            if choice == '1':
-                return "グー"
-            elif choice == '2':
-                return "チョキ"
-            elif choice == '3':
-                return "パー"
+    while (True):
+        user = input('じゃんけんゲーム！\n1.グー\n2.チョキ\n3.パー\nあなたの手を選択してね！>>>')
+        if user.isdigit() == False:
+            print('数字で入力してください。')
+            continue
         else:
-            print("無効な入力です。1, 2, 3のいずれかを入力してください。")
+            user = int(user)
 
-
-player_choice = pon()
-print(f"プレイヤーの手: {player_choice}")
+        if user < 1 or 3 < user:
+            print('異常な値です。確認してください。')
+        else:
+            break
+    return user
